@@ -1,0 +1,156 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-blush: var(--blush);
+  --color-rose-gold: var(--rose-gold);
+  --color-deep-rose: var(--deep-rose);
+  --color-peach: var(--peach);
+  --color-ivory: var(--ivory);
+  --font-display: var(--font-display);
+  --font-script: var(--font-script);
+  --font-serif: var(--font-serif);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Wedding palette */
+  --ivory: oklch(0.985 0.01 60);
+  --blush: oklch(0.92 0.04 15);
+  --peach: oklch(0.9 0.06 40);
+  --rose-gold: oklch(0.72 0.1 30);
+  --deep-rose: oklch(0.55 0.14 15);
+
+  --background: oklch(0.985 0.01 60);
+  --foreground: oklch(0.35 0.08 15);
+  --card: oklch(1 0 0 / 0.7);
+  --card-foreground: oklch(0.35 0.08 15);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.35 0.08 15);
+  --primary: oklch(0.55 0.14 15);
+  --primary-foreground: oklch(0.985 0.01 60);
+  --secondary: oklch(0.92 0.04 15);
+  --secondary-foreground: oklch(0.35 0.08 15);
+  --muted: oklch(0.95 0.02 30);
+  --muted-foreground: oklch(0.5 0.05 15);
+  --accent: oklch(0.72 0.1 30);
+  --accent-foreground: oklch(0.985 0.01 60);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.85 0.05 20);
+  --input: oklch(0.92 0.03 20);
+  --ring: oklch(0.72 0.1 30);
+
+  --font-script: "Great Vibes", cursive;
+  --font-display: "Cormorant Garamond", serif;
+  --font-serif: "Cormorant Garamond", serif;
+
+  --gradient-romance: linear-gradient(135deg, oklch(0.96 0.03 20), oklch(0.92 0.05 30), oklch(0.88 0.07 25));
+  --gradient-rose-gold: linear-gradient(135deg, oklch(0.78 0.1 30), oklch(0.62 0.14 20));
+  --gradient-petal: radial-gradient(ellipse at top, oklch(0.95 0.04 15), oklch(0.88 0.06 25));
+
+  --shadow-soft: 0 10px 40px -10px oklch(0.55 0.14 15 / 0.25);
+  --shadow-glow: 0 0 60px oklch(0.78 0.12 25 / 0.5);
+  --shadow-petal: 0 20px 60px -15px oklch(0.55 0.14 15 / 0.35);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background: var(--gradient-petal);
+    color: var(--color-foreground);
+    font-family: var(--font-serif);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+}
+
+@font-face {
+  font-family: 'Great Vibes';
+  src: url('https://fonts.gstatic.com/s/greatvibes/v19/RWmMoKWR9v4ksMfaWd_JN-XCg6UKDXlq.woff2') format('woff2');
+  font-display: swap;
+}
+
+@layer utilities {
+  .font-script { font-family: var(--font-script); }
+  .font-display { font-family: var(--font-display); }
+  .text-rose-gold { color: var(--rose-gold); }
+  .text-deep-rose { color: var(--deep-rose); }
+  .bg-blush { background-color: var(--blush); }
+  .bg-ivory { background-color: var(--ivory); }
+  .bg-rose-gold { background-color: var(--rose-gold); }
+  .bg-gradient-romance { background: var(--gradient-romance); }
+  .bg-gradient-rose-gold { background: var(--gradient-rose-gold); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-petal { box-shadow: var(--shadow-petal); }
+  .text-gradient-rose {
+    background: var(--gradient-rose-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glass {
+    background: oklch(1 0 0 / 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(1 0 0 / 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.15); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
+.animate-sparkle { animation: sparkle 2s ease-in-out infinite; }
+
+html { scroll-behavior: smooth; }
+::selection { background: var(--blush); color: var(--deep-rose); }
