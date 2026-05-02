@@ -23,23 +23,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/client.tsx"></script>
-    <script>
-      // Fallback if React app fails to load
-      setTimeout(() => {
-        if (!document.getElementById('root').firstChild) {
-          document.getElementById('root').innerHTML = `
-            <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: system-ui;">
-              <div style="text-align: center; padding: 2rem;">
-                <h1 style="color: #dc2626; margin-bottom: 1rem;">Loading Failed</h1>
-                <p style="margin-bottom: 1rem;">The wedding invitation failed to load.</p>
-                <button onclick="window.location.reload()" style="padding: 0.5rem 1rem; background: #2563eb; color: white; border: none; border-radius: 0.25rem; cursor: pointer;">
-                  Try Again
-                </button>
-              </div>
-            </div>
-          `;
-        }
-      }, 5000);
-    </script>
   </body>
 </html>
