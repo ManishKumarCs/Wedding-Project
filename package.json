@@ -1,7 +1,7 @@
 {
-  "name": "tanstack_start_ts",
+  "name": "wedding-invitation",
+  "version": "1.0.0",
   "private": true,
-  "sideEffects": false,
   "type": "module",
   "scripts": {
     "dev": "vite dev",
