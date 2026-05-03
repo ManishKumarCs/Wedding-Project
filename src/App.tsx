@@ -26,12 +26,33 @@ function App() {
       const css = document.querySelector('link[href*="index"]');
       const js = document.querySelector('script[src*="index"]');
       
+      console.log("CSS found:", !!css);
+      console.log("JS found:", !!js);
+      console.log("CSS href:", css?.href);
+      console.log("JS src:", js?.src);
+      
+      // Don't set error immediately - give more time for assets to load
       if (!css || !js) {
-        setError("Critical assets failed to load");
+        console.log("Assets not yet loaded, will retry...");
+        return;
+      }
+      
+      // Check if assets are actually loaded (not just present in DOM)
+      const cssLoaded = css && (css as HTMLLinkElement).sheet;
+      const jsLoaded = js && js.readyState !== 'unloaded';
+      
+      console.log("CSS loaded:", !!cssLoaded);
+      console.log("JS loaded:", jsLoaded);
+      
+      if (!cssLoaded || !jsLoaded) {
+        setError("Critical assets failed to load properly");
       }
     };
 
-    setTimeout(checkAssets, 2000);
+    // Check multiple times with increasing delays
+    setTimeout(checkAssets, 1000);
+    setTimeout(checkAssets, 3000);
+    setTimeout(checkAssets, 5000);
   }, []);
 
   if (error) {

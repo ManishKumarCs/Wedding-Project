@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import haldiImage from "../../assets/Gemini_Generated_Image_ivgf3yivgf3yivgf (1).png";
 import mehendiImage from "../../assets/Gemini_Generated_Image_gzdniegzdniegzdn.png";
-import jaagoImage from "../../assets/Gemini_Generated_Image_16b5wx16b5wx16b5.png";
+import jaagoImage from "../../assets/Gemini_Generated_Image_16b5wx16b5wx16b5-CFQ8f_Ja.png";
 import djPartyImage from "../../assets/Gemini_Generated_Image_lefg5ylefg5ylefg.png";
 import baratReceptionImage from "../../assets/Gemini_Generated_Image_fz8zyxfz8zyxfz8z.png";
 import doliVidaiImage from "../../assets/Gemini_Generated_Image_dagqy4dagqy4dagq.png";

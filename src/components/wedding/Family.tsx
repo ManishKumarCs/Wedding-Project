@@ -73,13 +73,14 @@ export function Family() {
           <p className="text-rose-gold tracking-[0.3em] text-xs uppercase">
             With Best Compliments From
           </p>
-          <h3 className="font-script text-4xl text-deep-rose mt-2">R.S.V.P.</h3>
-          <div className="my-6 flex justify-center">
-            <span className="h-px w-24 bg-rose-gold/40" />
-          </div>
+          
           <p className="font-display text-xl md:text-2xl text-foreground/80">
             All Relatives
           </p>
+          <div className="my-6 flex justify-center">
+            <span className="h-px w-24 bg-rose-gold/40" />
+          </div>
+          <h3 className="font-script text-4xl text-deep-rose mt-2">R.S.V.P.</h3>
           <p className="font-script text-2xl text-rose-gold mt-4">
             All Verma Family
           </p>
